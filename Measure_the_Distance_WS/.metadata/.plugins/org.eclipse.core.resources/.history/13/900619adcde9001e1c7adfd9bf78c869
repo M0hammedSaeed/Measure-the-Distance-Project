@@ -1,0 +1,54 @@
+/*******************************************************************************
+* [File Name]:   Mini_Project4.c
+*
+* [Description]: Source file for implementing the system to measure the distance
+* 				 using ultrasonic sensor Functionality.
+*
+* [Author]:      Mohamed Saeed
+*
+********************************************************************************/
+
+/*------------------------------------------------------------------------------
+ *                                 INCLUDES
+ *------------------------------------------------------------------------------*/
+
+#include "Mini_Project4.h"
+#include "../MCAL/G_INTERRUPT/g_interrupt.h"
+#include "../utils/std_types.h"
+
+/*******************************************************************************
+ *                               Global Variable
+ *******************************************************************************/
+
+uint8 temp;
+Fan_State_t Fan = FAN_OFF;
+
+/*--------------------------------------------------------------------------------------
+ [Function Name]: applicationInit
+ [Description]:	This function is responsible to Initialize the Application
+ [Args]:   void
+ [Return]: Void
+ ---------------------------------------------------------------------------------------*/
+void applicationInit(void)
+{
+	/* Initialize Ultrasonic driver */
+	Ultrasonic_init();
+
+	/* Initialize LCD driver */
+	LCD_init();
+
+	/* Display this string "Distance =    cm" only once on LCD at the first row*/
+	LCD_moveCursor(0, 0);
+	LCD_displayString("Distance =    cm");
+}
+
+/*--------------------------------------------------------------------------------------
+ [Function Name]: applicationStart
+ [Description]:	This function is responsible to Start the Application
+ [Args]:   void
+ [Return]: Void
+ ---------------------------------------------------------------------------------------*/
+void applicationStart(void)
+{
+
+}

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Measure_the_Distance_Project/src/APP/Mini_Project4.c&apos; to &apos;app.c&apos;" description="Rename resource &apos;Mini_Project4.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/APP/Mini_Project4.c" name="app.c" stamp="1712454612993" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Measure_the_Distance_Project/src/APP/Mini_Project4.h&apos; to &apos;app.h&apos;" description="Rename resource &apos;Mini_Project4.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/APP/Mini_Project4.h" name="app.h" stamp="1712454627217" updateReferences="true"/>
+</session>

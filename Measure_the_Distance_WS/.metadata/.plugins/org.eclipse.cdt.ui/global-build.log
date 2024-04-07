@@ -1,0 +1,17 @@
+03:50:57 **** Incremental Build of configuration Debug for project Measure_the_Distance_Project ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Measure_the_Distance_Project.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9730 bytes (29.7% Full)
+(.text + .data + .bootloader)
+
+Data:         32 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

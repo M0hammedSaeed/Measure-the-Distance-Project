@@ -1,0 +1,72 @@
+/*******************************************************************************
+* [File Name]:   Mini_Project4.c
+*
+* [Description]: Source file for implementing the system to measure the distance
+* 				 using ultrasonic sensor Functionality.
+*
+* [Author]:      Mohamed Saeed
+*
+********************************************************************************/
+
+/*------------------------------------------------------------------------------
+ *                                 INCLUDES
+ *------------------------------------------------------------------------------*/
+
+#include "Mini_Project4.h"
+#include "../MCAL/G_INTERRUPT/g_interrupt.h"
+#include "../utils/std_types.h"
+
+/*******************************************************************************
+ *                         Implementation FUNCTIONS
+ *******************************************************************************/
+
+/*--------------------------------------------------------------------------------------
+ [Function Name]: applicationInit
+ [Description]:	This function is responsible to Initialize the Application
+ [Args]:   void
+ [Return]: Void
+ ---------------------------------------------------------------------------------------*/
+void applicationInit(void)
+{
+	/* Initialize the LCD driver */
+	LCD_init();
+
+	/* Initialize the Ultrasonic driver */
+	Ultrasonic_init();
+
+
+
+	/* Enable Global Interrupt I-Bit */
+	GI_Enable();
+
+	/* Display this string "Distance =    cm" only once on LCD at the first row*/
+	LCD_moveCursor(0, 0);
+	LCD_displayString("Distance =    cm");
+
+}
+
+/*--------------------------------------------------------------------------------------
+ [Function Name]: applicationStart
+ [Description]:	This function is responsible to Start the Application
+ [Args]:   void
+ [Return]: Void
+ ---------------------------------------------------------------------------------------*/
+void applicationStart(void)
+{
+	uint16 distance = 0;
+
+	/* Read the distance from the Ultrasonic sensor */
+	distance = Ultrasonic_readDistance();
+
+	LCD_moveCursor(0, 11);
+	if(distance >= 100)
+	{
+		LCD_intgerToString(distance);
+	}
+	else
+	{
+		LCD_intgerToString(distance);
+		LCD_displayCharacter(' ');
+	}
+
+}
